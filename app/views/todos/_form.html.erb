@@ -1,0 +1,7 @@
+<div class="container">
+  <%= form_with model: @todo, local: true do |f| %>
+        <%= f.text_field :description %>
+        <%= f.submit "Enviar" %>
+  <% end %>
+  <%= link_to "nuevo ToDo", todos_new_path %>
+</div>

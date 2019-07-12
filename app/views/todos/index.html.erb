@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Bienvenido</h1>
+  <%= link_to "Agrega una nueva tarea", todos_new_path %>
+  <p> Estas son tus tareas </p>
+  <% @todos.each do |todo| %>
+    <h3> <%= todo.description %> </h3>
+    <p> <%= todo.completed %> </p>
+    <%= link_to "Show", todo, class: 'btn btn-primary' %>
+    <%= link_to "Borrar", todo, method: :delete, class: 'btn btn-primary' %>
+    <%= link_to "Completado", complete_todo_path(todo), class: 'btn btn-primary' %>
+  <% end %>
+</div>
